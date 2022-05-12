@@ -8,7 +8,11 @@ import os
 import mysql.connector
 import random
 
+# Odorbase is a 128 entry, 6 column SQL table on the class server with flybase genes related to olfaction
+# This script pulls a random entry from the database and dumps the data in JSON format
+
 def main():
+
     print("Content-Type: application/json\n\n")
 
     conn = mysql.connector.connect(user='skyllma1', password='password2', host='localhost', database='skyllma1')
