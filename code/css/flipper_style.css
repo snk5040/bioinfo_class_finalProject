@@ -1,0 +1,38 @@
+.intro-card{
+  border-radius: 8px;
+  top: 20px;
+  left: 20px;
+  width: 500px;
+  height: 600px;
+  rotation-point:30% 30%;
+  display: block;
+  background: linear-gradient(145deg, rgb(195, 240, 200), rgb(80, 155, 245));
+  font-size: xx-large;
+}
+.card, .current-card{
+  position: absolute;
+  border-style: solid;
+  border-radius: 8px;
+  top: 20px;
+  left: 20px;
+  width: 500px;
+  height: 600px;
+  background: AliceBlue;
+  display:none;
+}
+#next-button{
+  position: absolute;
+  top: 650px;
+  left: 150px;
+  visibility: hidden;
+}
+#intro-button {
+  position: absolute;
+  top: 650px;
+  left: 150px;
+}
+#previous-button {
+  position: absolute;
+  top: 650px;
+  left: 50px;
+}
