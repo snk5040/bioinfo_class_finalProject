@@ -16,9 +16,9 @@ At first, an introduction card welcomes the user to the odorbase browser.  Once 
 
 ![This is an example card:](documentation/final_report/example_card.png)
 
-Using the Next and Previous buttons will move forward and backward in the stack of cards.  When a search term is entered in the search bar and submitted via the submit button the program will search the Odorbase SQL database for exact matches of FlyBase IDs, names, or symbols.  Additionally, non-exact matches will be generated with the descriptions of the protein's function and protein family.  A successful search will generate an alert of the amount of matches generated while each match will generate a card at the end of the stack for subsequent viewing.
+Using the Next and Previous buttons will move forward and backward in the stack of cards.  As new cards are generated for the stack, a random entry is accessed to then be rendered.  When a search term is entered in the search bar and submitted via the submit button the program will search the Odorbase SQL database for exact matches of FlyBase IDs, names, or symbols.  Additionally, non-exact matches will be generated with the descriptions of the protein's function and protein family.  A successful search will generate an alert of the amount of matches generated while each match will generate a card at the end of the stack.  The user must move forward in the stack to then view the generated card.
 
 A hyperlink is included at the bottom of the card to guide the user to the FlyBase report for the gene being displayed.  Another hyperlink is included to guide the user to a UniProt database search for the symbol of the gene being displayed.  Either hyperlink will open a new tab in the user's browser.
 
-##Author
+## Author
 Sebastian Kyllmann.  GitHub Profile: https://github.com/snk5040
