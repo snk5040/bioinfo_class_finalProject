@@ -18,6 +18,7 @@
   width: 500px;
   height: 600px;
   background: AliceBlue;
+  font-size: 1.35em;
   display:none;
 }
 #next-button{

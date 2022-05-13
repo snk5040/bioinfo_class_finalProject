@@ -10,7 +10,8 @@ $(document).ready( function() {
         $.each( data, function( key, val ) {
           $('.current-card').append('<li>'+key+': '+val+'</li>');
         });
-        $('.current-card').append('<li><a href=\'http://flybase.org/reports/'+data['FlyBase ID']+'\'> HyperLink to FlyBase Report. </a></li>');
+        $('.current-card').append('<li><a href=\'http://flybase.org/reports/'+data['FlyBase ID']+'\' target=\'_blank\'> HyperLink to FlyBase Report. </a></li>');
+        $('.current-card').append('<li><a href=\'http://www.uniprot.org/uniprot/?query='+data['Symbol']+'&fil=organism%3A%22Drosophila+melanogaster+%28Fruit+fly%29+%5B7227%5D%22&sort=score\' target=\'_blank\'> HyperLink to UniProt Search. </a></li>');
     });
 
     // Data is obtained from the cgi script and rendered on the first card
@@ -36,7 +37,8 @@ $(document).ready( function() {
           $.each( data, function( key, val ) {
             $("#card"+index).append('<li>'+key+': '+val+'</li>');
           });
-          $("#card"+index).append('<li><a href=\'http://flybase.org/reports/'+data['FlyBase ID']+'\'> HyperLink to FlyBase Report. </a></li>');
+          $("#card"+index).append('<li><a href=\'http://flybase.org/reports/'+data['FlyBase ID']+'\' target=\'_blank\'> HyperLink to FlyBase Report. </a></li>');
+          $("#card"+index).append('<li><a href=\'http://www.uniprot.org/uniprot/?query='+data['Symbol']+'&fil=organism%3A%22Drosophila+melanogaster+%28Fruit+fly%29+%5B7227%5D%22&sort=score\' target=\'_blank\'> HyperLink to UniProt Search. </a></li>');
         });
         $(".current-card").animate({marginLeft: "+=150px",rotate: "40deg"}).fadeOut(300).attr("class","card");
         $("#card"+index).fadeIn(1000).attr("class","current-card");
@@ -74,7 +76,7 @@ $(document).ready( function() {
           dataType: 'json',
           data: frmStr,
           success: function(data, textStatus, jqXHR) {
-            alert(data.match_count + " matches were found and " + data.match_count + " cards added to the bottom of the stack.");
+            alert(data.match_count + " matches were found and " + data.match_count + " cards added to the end of the stack.");
             $.each( data.matches, function( i, item ) {
               index++;
               $('.cardcontainer').append("<ul class=\"card\" id=\"card"+index+"\">");
@@ -84,7 +86,8 @@ $(document).ready( function() {
               $("#card"+index).append('<li>'+'Symbol: '+item.Symbol+'</li>');
               $("#card"+index).append('<li>'+'UniProt Function: '+item.UniProt_Function+'</li>');
               $("#card"+index).append('<li>'+'Protein Family: '+item.Protein_Family+'</li>');
-              $("#card"+index).append('<li><a href=\'http://flybase.org/reports/'+data['FlyBase ID']+'\'> HyperLink to FlyBase Report. </a></li>');
+              $("#card"+index).append('<li><a href=\'http://flybase.org/reports/'+item.FlyBaseID+'\' target=\'_blank\'> HyperLink to FlyBase Report. </a></li>');
+              $("#card"+index).append('<li><a href=\'http://www.uniprot.org/uniprot/?query='+item.Symbol+'&fil=organism%3A%22Drosophila+melanogaster+%28Fruit+fly%29+%5B7227%5D%22&sort=score\' target=\'_blank\'> HyperLink to UniProt Search. </a></li>');
             });
           },
           error: function(jqXHR, textStatus, errorThrown){
