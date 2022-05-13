@@ -23,16 +23,22 @@
 #next-button{
   position: absolute;
   top: 650px;
-  left: 150px;
+  left: 280px;
   visibility: hidden;
 }
 #intro-button {
   position: absolute;
   top: 650px;
-  left: 150px;
+  left: 280px;
 }
 #previous-button {
   position: absolute;
   top: 650px;
-  left: 50px;
+  left: 180px;
+}
+form {
+  position: absolute;
+  top: 675px;
+  left: 125px;
+  display:none;
 }
