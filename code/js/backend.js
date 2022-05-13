@@ -10,9 +10,7 @@ $(document).ready( function() {
         $.each( data, function( key, val ) {
           $('.current-card').append('<li>'+key+': '+val+'</li>');
         });
-        //$('.current-card').append("<ul id=\"hyperlink1\">HyperLinks</ul>");
-        //$('.current-card').append('<li> HyperLinks:</li>');
-        //$('.current-card').append('<li><a href=\"url\">http://flybase.org/reports/'+data['FlyBase ID']+'</a></li>');
+        $('.current-card').append('<li><a href=\'http://flybase.org/reports/'+data['FlyBase ID']+'\'> HyperLink to FlyBase Report. </a></li>');
     });
 
     // Data is obtained from the cgi script and rendered on the first card
@@ -38,6 +36,7 @@ $(document).ready( function() {
           $.each( data, function( key, val ) {
             $("#card"+index).append('<li>'+key+': '+val+'</li>');
           });
+          $("#card"+index).append('<li><a href=\'http://flybase.org/reports/'+data['FlyBase ID']+'\'> HyperLink to FlyBase Report. </a></li>');
         });
         $(".current-card").animate({marginLeft: "+=150px",rotate: "40deg"}).fadeOut(300).attr("class","card");
         $("#card"+index).fadeIn(1000).attr("class","current-card");
@@ -65,6 +64,7 @@ $(document).ready( function() {
       console.log(selector,index);
     });
 
+    // Search functionality: one card per result is/are added to the end of the stack
     $('#submit').click( function() {
       // transforms all the form parameters into a string we can send to the server
       var frmStr = $('#odorbase_search').serialize();
@@ -84,6 +84,7 @@ $(document).ready( function() {
               $("#card"+index).append('<li>'+'Symbol: '+item.Symbol+'</li>');
               $("#card"+index).append('<li>'+'UniProt Function: '+item.UniProt_Function+'</li>');
               $("#card"+index).append('<li>'+'Protein Family: '+item.Protein_Family+'</li>');
+              $("#card"+index).append('<li><a href=\'http://flybase.org/reports/'+data['FlyBase ID']+'\'> HyperLink to FlyBase Report. </a></li>');
             });
           },
           error: function(jqXHR, textStatus, errorThrown){
