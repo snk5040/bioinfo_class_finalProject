@@ -14,7 +14,7 @@ http://bfx3.aap.jhu.edu/skyllma1/final_project/code/odorbase.html.
 
 At first, an introduction card welcomes the user to the odorbase browser.  Once the user clicks on the Next button, the first Tinderesque card will be displayed.  The search bar will also fade in to allow for search functionality.  An example screenshot is included below.
 
-![This is an example card:](/documentation/final_report/example_card.png)
+![This is an example card:](documentation/final_report/example_card.png)
 
 Using the Next and Previous buttons will move forward and backward in the stack of cards.  When a search term is entered in the search bar and submitted via the submit button the program will search the Odorbase SQL database for exact matches of FlyBase IDs, names, or symbols.  Additionally, non-exact matches will be generated with the descriptions of the protein's function and protein family.  A successful search will generate an alert of the amount of matches generated while each match will generate a card at the end of the stack for subsequent viewing.
 
